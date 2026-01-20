@@ -1,0 +1,135 @@
+/* ===============================
+   GLOBAL WRAPPER
+================================ */
+.admin-wrapper {
+  padding: 16px;
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+/* ===============================
+   GRID SYSTEM
+   Mobile: 2 cards
+   Desktop: 4 cards
+================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* ===============================
+   TRUE SQUARE CARD (DO NOT CHANGE)
+================================ */
+.card {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* keeps square */
+  background: #141414;
+  border-radius: 14px;
+  border: 1px solid #1f1f1f;
+  overflow: hidden;
+
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+  border-color: #2a2a2a;
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+/* ===============================
+   CARD CONTENT
+================================ */
+.card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px;
+}
+
+/* ===============================
+   ICON (LARGE & PROFESSIONAL)
+================================ */
+.card-content .icon {
+  font-size: 46px;
+  color: #6fb1ff;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(111, 177, 255, 0.18),
+    rgba(111, 177, 255, 0.06)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(111, 177, 255, 0.25);
+}
+
+/* ===============================
+   VALUE / METRIC (EMAILS, APP ID)
+================================ */
+.card-content .metric {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+
+  /* 🔥 IMPORTANT FOR RN DATA */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* ===============================
+   LABEL
+================================ */
+.card-content .label {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.95;
+  margin-top: 6px;
+}
+
+/* ===============================
+   SUB TEXT
+================================ */
+.card-content .sub {
+  font-size: 12px;
+  opacity: 0.65;
+  margin-top: 2px;
+}
+
+/* ===============================
+   DESKTOP
+================================ */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

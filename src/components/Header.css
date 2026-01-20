@@ -1,0 +1,46 @@
+.header {
+  height: 64px;
+  background: #0b0b0b;
+  border-bottom: 1px solid #1f1f1f;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* TITLE */
+.header-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+/* RIGHT SIDE */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* ADMIN BADGE (RED) */
+.admin-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ff4d4f;
+  background: rgba(255, 77, 79, 0.15);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 77, 79, 0.4);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 18px;
+  }
+
+  .admin-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}

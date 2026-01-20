@@ -1,0 +1,20 @@
+.admin-layout {
+  display: flex;
+}
+
+.main-area {
+  margin-left: 220px;
+  width: calc(100% - 220px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .main-area {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.page-content {
+  padding: 16px;
+}
