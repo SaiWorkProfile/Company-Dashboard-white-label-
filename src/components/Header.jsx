@@ -1,41 +1,17 @@
-import { useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
-import "./AdminLayout.css";
+import { FiMenu } from "react-icons/fi";
+import "./Header.css";
 
-export default function AdminLayout() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const location = useLocation();
-
-  const titles = {
-    "/company/dashboard": "Company Dashboard",
-    "/company/profile": "Company Profile",
-    "/company/branding": "Branding Settings",
-    "/company/ai": "AI Settings",
-    "/company/users": "User Management",
-    "/company/roles": "Roles & Permissions",
-    "/company/billing": "Billing & Usage",
-    "/company/analytics": "Analytics",
-  };
-
+export default function Header({ title, onMenuClick }) {
   return (
-    <div className="admin-layout">
-      <Sidebar
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
+    <header className="header">
+      {/* MOBILE ONLY */}
+      <button className="menu-btn" onClick={onMenuClick}>
+        <FiMenu />
+      </button>
 
-      <div className="main-area">
-        <Header
-          title={titles[location.pathname]}
-          onMenuClick={() => setSidebarOpen(true)}
-        />
+      <h3 className="header-title">{title}</h3>
 
-        <main className="page-content">
-          <Outlet />
-        </main>
-      </div>
-    </div>
+      <span className="admin-badge">Admin</span>
+    </header>
   );
 }

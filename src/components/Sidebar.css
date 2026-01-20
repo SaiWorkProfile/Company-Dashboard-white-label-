@@ -4,18 +4,52 @@
   background: #0f0f0f;
   border-right: 1px solid #1f1f1f;
   padding: 16px;
+
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-
-  transition: transform 0.3s ease;
 }
 
-/* MOBILE HIDDEN */
+/* LOGO */
+.sidebar-logo {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+/* MENU */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #cfcfcf;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sidebar-menu a:hover {
+  background: #1a1a1a;
+}
+
+.sidebar-menu a.active {
+  background: #1a1a1a;
+  color: #6fb1ff;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);
+    transition: transform 0.3s ease;
   }
 
   .sidebar.open {
